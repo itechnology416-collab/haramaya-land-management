@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haramaya Woreda Land Management (Preview)</title>
+    <!-- Tailwind CSS via CDN (No installation needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#1b5e20',
+                        'brand-gold': '#ffd700',
+                        'brand-light': '#f1f8e9',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 bg-brand-light">
+
+    <!-- Navbar -->
+    <nav class="bg-brand-green text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 bg-brand-gold rounded-full flex items-center justify-center text-brand-green font-bold">
+                        H</div>
+                    <span class="font-bold text-xl">Haramaya Land Management</span>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="hover:bg-green-700 px-3 py-2 rounded-md font-medium">Home</a>
+                    <a href="#" class="hover:bg-green-700 px-3 py-2 rounded-md font-medium">About</a>
+                    <a href="#" class="hover:bg-green-700 px-3 py-2 rounded-md font-medium">Services</a>
+                    <a href="#" class="hover:bg-green-700 px-3 py-2 rounded-md font-medium">News</a>
+                    <a href="#" class="hover:bg-green-700 px-3 py-2 rounded-md font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-brand-green text-white py-20 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Haramaya Woreda Land Management</h1>
+            <p class="text-xl mb-10 text-green-100">Ensuring transparent, efficient, and fair land administration for
+                all citizens.</p>
+            <div class="flex justify-center gap-4">
+                <button
+                    class="bg-brand-gold text-brand-green px-8 py-3 rounded-full font-bold shadow-lg hover:bg-yellow-400 transition">Our
+                    Services</button>
+                <button
+                    class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-brand-green transition">About
+                    Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-brand-green">Quick Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-brand-green">
+                    <div
+                        class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-brand-green text-2xl">
+                        🏠</div>
+                    <h3 class="text-xl font-bold mb-3">Land Registration</h3>
+                    <p class="text-gray-600 mb-4">Register your property and secure your legal title deed efficiently.
+                    </p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-brand-gold">
+                    <div
+                        class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-yellow-700 text-2xl">
+                        📄</div>
+                    <h3 class="text-xl font-bold mb-3">Property Tax</h3>
+                    <p class="text-gray-600 mb-4">Check tax rates and deadlines for residential and commercial
+                        properties.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-brand-green">
+                    <div
+                        class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-brand-green text-2xl">
+                        ✅</div>
+                    <h3 class="text-xl font-bold mb-3">Construction Permit</h3>
+                    <p class="text-gray-600 mb-4">Apply for renovation or new construction permits online guidelines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="mb-4 text-xl font-bold text-brand-gold">Haramaya Woreda Land Management</p>
+            <p class="text-gray-400">&copy; 2017 E.C. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
