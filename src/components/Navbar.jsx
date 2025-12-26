@@ -79,7 +79,6 @@ const Navbar = ({ lang, setLang }) => {
     };
 
     const t = content[lang];
-    const isHome = location.pathname === '/';
 
     // Navbar style based on scroll and page
     const navClass = cn(

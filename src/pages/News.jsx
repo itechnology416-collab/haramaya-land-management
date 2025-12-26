@@ -42,7 +42,7 @@ const News = ({ lang }) => {
         };
 
         fetchNews();
-    }, []);
+    }, [t.errorMsg]);
 
     const containerVariants = {
         hidden: { opacity: 0 },

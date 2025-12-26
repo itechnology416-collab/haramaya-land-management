@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Send, MessageSquare } from 'lucide-react';
 import { supabase } from '../supabaseClient';
 import { motion } from 'framer-motion';

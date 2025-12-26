@@ -1,8 +1,6 @@
-import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/ui/Card';
-import { SectionHeader } from '../components/ui/SectionHeader';
 
 const ContactInfo = ({ lang }) => {
     const t = {

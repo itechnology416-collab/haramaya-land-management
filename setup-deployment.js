@@ -2,7 +2,6 @@
 
 const { execSync } = require('child_process');
 const readline = require('readline');
-const fs = require('fs');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -64,7 +63,7 @@ async function setupDeployment() {
             try {
                 execSync('npm install -g vercel', { stdio: 'inherit' });
                 console.log('✅ Vercel CLI installed');
-            } catch (error) {
+            } catch {
                 console.log('❌ Failed to install Vercel CLI');
             }
         }
@@ -75,7 +74,7 @@ async function setupDeployment() {
             try {
                 execSync('npm install -g netlify-cli', { stdio: 'inherit' });
                 console.log('✅ Netlify CLI installed');
-            } catch (error) {
+            } catch {
                 console.log('❌ Failed to install Netlify CLI');
             }
         }
@@ -85,7 +84,7 @@ async function setupDeployment() {
         try {
             execSync('npm run build', { stdio: 'inherit' });
             console.log('✅ Build completed successfully!');
-        } catch (error) {
+        } catch {
             console.log('❌ Build failed. Please check for errors.');
             rl.close();
             return;

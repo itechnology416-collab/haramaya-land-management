@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, FileText, Home as HomeIcon, CheckCircle, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';

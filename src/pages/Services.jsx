@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Home, CheckCircle, Shield, Briefcase, Ruler } from 'lucide-react';
 import { SectionHeader } from '../components/ui/SectionHeader';

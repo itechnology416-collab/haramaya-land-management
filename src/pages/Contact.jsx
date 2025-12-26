@@ -58,7 +58,7 @@ const Contact = ({ lang }) => {
             <div className="bg-brand-green text-white py-12 mb-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl font-bold">{t.title}</h1>
-                    <p className="mt-4 text-green-100">"{t.subtitle}"</p>
+                    <p className="mt-4 text-green-100">&ldquo;{t.subtitle}&rdquo;</p>
                 </div>
             </div>
 

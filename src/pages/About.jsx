@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Eye, Users } from 'lucide-react';
 import { SectionHeader } from '../components/ui/SectionHeader';
