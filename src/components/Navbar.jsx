@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronDown, Globe, Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../lib/utils';
 
 const Dropdown = ({ title, items, lang, scrolled }) => {
@@ -220,7 +220,7 @@ const Navbar = ({ lang, setLang }) => {
                             <Link to="/" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-brand-green font-medium">{t.home}</Link>
 
                             <div className="px-4 pt-2 text-xs font-bold text-gray-400 uppercase tracking-wider">{lang === 'en' ? "About" : "Waa'ee Keenya"}</div>
-                            <Link to="/about" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-gray-600 text-sm ml-2">Measure & Vision</Link>
+                            <Link to="/about" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-gray-600 text-sm ml-2">{lang === 'en' ? "Mission & Vision" : "Ergamaa fi Mul'ata"}</Link>
                             <Link to="/history" className="block px-4 py-2 rounded-lg hover:bg-gray-50 text-gray-600 text-sm ml-2">History & People</Link>
 
                             <Link to="/services" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-brand-green font-medium">{t.services}</Link>

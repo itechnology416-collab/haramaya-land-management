@@ -1,0 +1,45 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  VITE_SUPABASE_URL = "https://qsrbmlhbskxjemlpggjf.supabase.co"
+  VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzcmJtbGhic2t4amVtbHBnZ2pmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1Mzk4MTEsImV4cCI6MjA4MjExNTgxMX0.Do9FtBOJix5Oqh9xh0ko1JKaRi6q8S0R2F-rXeQxkTU"
+
+[context.deploy-preview.environment]
+  VITE_SUPABASE_URL = "https://qsrbmlhbskxjemlpggjf.supabase.co"
+  VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzcmJtbGhic2t4amVtbHBnZ2pmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1Mzk4MTEsImV4cCI6MjA4MjExNTgxMX0.Do9FtBOJix5Oqh9xh0ko1JKaRi6q8S0R2F-rXeQxkTU"
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haramaya Land Management - Deployment Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #1b5e20;
+        }
+        .platform {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .platform h3 {
+            color: #1b5e20;
+            margin-top: 0;
+        }
+        .button {
+            display: inline-block;
+            background: #1b5e20;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 10px 10px 0;
+        }
+        .button:hover {
+            background: #2e7d32;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .env-vars {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 Haramaya Land Management</h1>
+        <h2>Deployment Guide</h2>
+        <p>Deploy your application to Vercel and Netlify</p>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ Git Not Found:</strong> Since Git is not installed, we'll use manual deployment methods.
+        You can install Git later from <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a>
+    </div>
+
+    <div class="step">
+        <h2>📦 Step 1: Build Your Project</h2>
+        <p>First, make sure your project is built:</p>
+        <code>npm run build</code>
+        <p>This creates a <code>dist</code> folder with your production files.</p>
+    </div>
+
+    <div class="step">
+        <h2>🌐 Step 2: Choose Deployment Platform</h2>
+        
+        <div class="platform">
+            <h3>🔵 Vercel (Recommended)</h3>
+            <p><strong>Method 1: Drag & Drop</strong></p>
+            <ol>
+                <li>Go to <a href="https://vercel.com" target="_blank">vercel.com</a></li>
+                <li>Sign up with GitHub, GitLab, or email</li>
+                <li>Click "New Project"</li>
+                <li>Drag your <code>dist</code> folder to upload</li>
+                <li>Add environment variables (see below)</li>
+                <li>Deploy!</li>
+            </ol>
+            <a href="https://vercel.com" target="_blank" class="button">Deploy to Vercel</a>
+        </div>
+
+        <div class="platform">
+            <h3>🟠 Netlify</h3>
+            <p><strong>Method 1: Drag & Drop</strong></p>
+            <ol>
+                <li>Go to <a href="https://netlify.com" target="_blank">netlify.com</a></li>
+                <li>Sign up with GitHub, GitLab, or email</li>
+                <li>Drag your <code>dist</code> folder to the deploy area</li>
+                <li>Add environment variables in Site Settings</li>
+                <li>Deploy!</li>
+            </ol>
+            <a href="https://netlify.com" target="_blank" class="button">Deploy to Netlify</a>
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>🔐 Step 3: Environment Variables</h2>
+        <p>Add these environment variables in your platform's dashboard:</p>
+        <div class="env-vars">
+VITE_SUPABASE_URL=https://qsrbmlhbskxjemlpggjf.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzcmJtbGhic2t4amVtbHBnZ2pmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1Mzk4MTEsImV4cCI6MjA4MjExNTgxMX0.Do9FtBOJix5Oqh9xh0ko1JKaRi6q8S0R2F-rXeQxkTU
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>⚡ Alternative: CLI Deployment</h2>
+        <p>If you want to use command line tools:</p>
+        
+        <h4>Install CLI Tools:</h4>
+        <code>npm install -g vercel netlify-cli</code>
+        
+        <h4>Deploy to Vercel:</h4>
+        <code>vercel login</code><br>
+        <code>vercel --prod</code>
+        
+        <h4>Deploy to Netlify:</h4>
+        <code>netlify login</code><br>
+        <code>netlify deploy --prod --dir=dist</code>
+    </div>
+
+    <div class="step">
+        <h2>🔄 Automated Deployment (Future)</h2>
+        <p>Once you install Git and create a GitHub repository:</p>
+        <ol>
+            <li>Install Git from <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a></li>
+            <li>Create a GitHub repository</li>
+            <li>Push your code: <code>git init && git add . && git commit -m "Initial commit"</code></li>
+            <li>Connect your repository to Vercel/Netlify</li>
+            <li>Automatic deployments on every push!</li>
+        </ol>
+    </div>
+
+    <div class="success">
+        <strong>✅ Quick Start:</strong>
+        <ol>
+            <li>Run <code>npm run build</code></li>
+            <li>Go to <a href="https://vercel.com" target="_blank">vercel.com</a> or <a href="https://netlify.com" target="_blank">netlify.com</a></li>
+            <li>Drag the <code>dist</code> folder</li>
+            <li>Add environment variables</li>
+            <li>Your site is live! 🎉</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>📞 Need Help?</h2>
+        <p>If you encounter issues:</p>
+        <ul>
+            <li>Check the <code>DEPLOYMENT.md</code> file for detailed instructions</li>
+            <li>Run <code>deploy-direct.bat</code> or <code>deploy-direct.ps1</code> for guided deployment</li>
+            <li>Contact: haramayaifo@gmail.com</li>
+        </ul>
+    </div>
+</body>
+</html>

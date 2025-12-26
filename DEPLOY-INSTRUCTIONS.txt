@@ -1,0 +1,95 @@
+========================================
+  HARAMAYA LAND MANAGEMENT SYSTEM
+        DEPLOYMENT INSTRUCTIONS
+========================================
+
+✅ YOUR PROJECT IS READY TO DEPLOY!
+
+📁 Built Files Location: dist/ folder
+📊 Project Status: All pages working, no errors found
+
+🚀 DEPLOYMENT OPTIONS:
+
+OPTION 1: VERCEL (RECOMMENDED - FASTEST)
+========================================
+1. Go to: https://vercel.com
+2. Sign up with email or GitHub account
+3. Click "New Project"
+4. Click "Browse" or drag your 'dist' folder
+5. Upload the entire 'dist' folder contents
+6. Go to Settings > Environment Variables
+7. Add these variables:
+   - VITE_SUPABASE_URL = https://qsrbmlhbskxjemlpggjf.supabase.co
+   - VITE_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzcmJtbGhic2t4amVtbHBnZ2pmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1Mzk4MTEsImV4cCI6MjA4MjExNTgxMX0.Do9FtBOJix5Oqh9xh0ko1JKaRi6q8S0R2F-rXeQxkTU
+8. Click "Deploy"
+9. Your site will be live at: https://your-project-name.vercel.app
+
+OPTION 2: NETLIFY (ALTERNATIVE)
+===============================
+1. Go to: https://netlify.com
+2. Sign up with email or GitHub account
+3. Drag your 'dist' folder to the deploy area
+4. Go to Site Settings > Environment Variables
+5. Add the same environment variables as above
+6. Redeploy if needed
+7. Your site will be live at: https://your-project-name.netlify.app
+
+OPTION 3: CLI DEPLOYMENT (IF YOU INSTALL TOOLS)
+===============================================
+Install CLI tools:
+npm install -g vercel netlify-cli
+
+Deploy to Vercel:
+vercel login
+vercel --prod
+
+Deploy to Netlify:
+netlify login
+netlify deploy --prod --dir=dist
+
+🔧 GIT INSTALLATION (OPTIONAL FOR FUTURE)
+=========================================
+Since winget failed, try manual installation:
+1. Go to: https://git-scm.com/download/win
+2. Download "64-bit Git for Windows Setup"
+3. Run installer with default settings
+4. Restart command prompt
+5. Test: git --version
+
+📱 YOUR LIVE SITES WILL HAVE:
+============================
+✅ 8 Complete Pages:
+   - Home (landing page)
+   - About (mission & vision)
+   - Services (6 service offerings)
+   - News (with gallery)
+   - History (timeline & leadership)
+   - Contact (contact form)
+   - Contact Info (addresses & phone)
+   - Feedback (feedback form)
+
+✅ Features:
+   - Bilingual (English/Afaan Oromoo)
+   - Responsive design
+   - Supabase database integration
+   - Contact forms working
+   - News system
+   - Modern animations
+   - Professional design
+
+🎯 QUICKEST PATH TO DEPLOYMENT:
+==============================
+1. Open https://vercel.com in your browser
+2. Sign up/Login
+3. Click "New Project"
+4. Drag your 'dist' folder
+5. Add environment variables
+6. Deploy!
+7. Share your live URL!
+
+📞 SUPPORT:
+==========
+Email: haramayaifo@gmail.com
+Phone: 0900 201 691 / 0915 707 761
+
+🎉 Your Haramaya Land Management System is production-ready!

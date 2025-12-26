@@ -1,15 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { Calendar, Image, Bell, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { supabase } from '../supabaseClient';
-import { Card } from '../components/ui/Card';
+import { Bell, Calendar, Image, Info } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Badge } from '../components/ui/Badge';
+import { Card } from '../components/ui/Card';
 import { SectionHeader } from '../components/ui/SectionHeader';
+import { supabase } from '../supabaseClient';
 
-const News = () => {
+const News = ({ lang }) => {
     const [newsItems, setNewsItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const t = {
+        title: lang === 'en' ? "News & Gallery" : "Oduu fi Galaarii",
+        subtitle: lang === 'en' ? "Stay informed with the latest developments, announcements, and events in Haramaya Woreda." : "Guddina, beeksisa fi taateewwan haaraa Aanaa Haramayaa keessatti mul'atan beekaa.",
+        latestUpdates: lang === 'en' ? "Latest Updates" : "Fooyya'iinsa Haaraa",
+        updatesSubtitle: lang === 'en' ? "Official announcements and community news" : "Beeksisa ofiisaa fi oduu hawaasaa",
+        photoGallery: lang === 'en' ? "Photo Gallery" : "Galaarii Suuraa",
+        gallerySubtitle: lang === 'en' ? "Glimpses of our community and projects" : "Mul'ata hawaasa fi pirojektoota keenyaa",
+        noNews: lang === 'en' ? "No news updates available at the moment." : "Yeroo ammaa kana fooyya'iinsi oduu hin jiru.",
+        readMore: lang === 'en' ? "Read more →" : "Dabalata dubbisaa →",
+        errorMsg: lang === 'en' ? "Failed to load news." : "Oduu fe'uun hin dandeenye."
+    };
 
     useEffect(() => {
         const fetchNews = async () => {
@@ -23,7 +35,7 @@ const News = () => {
                 setNewsItems(data);
             } catch (err) {
                 console.error('Error fetching news:', err);
-                setError('Failed to load news.');
+                setError(t.errorMsg);
             } finally {
                 setLoading(false);
             }
@@ -61,7 +73,7 @@ const News = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-5xl font-bold mb-4 tracking-tight"
                     >
-                        News & Gallery
+                        {t.title}
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -69,7 +81,7 @@ const News = () => {
                         transition={{ delay: 0.2 }}
                         className="text-xl text-green-100 max-w-2xl mx-auto font-light"
                     >
-                        Stay informed with the latest developments, announcements, and events in Haramaya Woreda.
+                        {t.subtitle}
                     </motion.p>
                 </div>
             </div>
@@ -78,8 +90,8 @@ const News = () => {
 
                 {/* News Section */}
                 <SectionHeader
-                    title="Latest Updates"
-                    subtitle="Official announcements and community news"
+                    title={t.latestUpdates}
+                    subtitle={t.updatesSubtitle}
                 />
 
                 {loading && (
@@ -93,7 +105,7 @@ const News = () => {
                 {error && <div className="text-center py-8 text-red-500 bg-red-50 rounded-lg border border-red-100">{error}</div>}
 
                 {!loading && !error && newsItems.length === 0 && (
-                    <div className="text-center py-12 text-gray-500 italic">No news updates available at the moment.</div>
+                    <div className="text-center py-12 text-gray-500 italic">{t.noNews}</div>
                 )}
 
                 <motion.div
@@ -121,7 +133,7 @@ const News = () => {
                                 <p className="text-gray-600 mb-4 flex-grow line-clamp-3">{item.content}</p>
 
                                 <button className="text-brand-green font-medium text-sm hover:underline mt-auto self-start">
-                                    Read more →
+                                    {t.readMore}
                                 </button>
                             </Card>
                         </motion.div>
@@ -130,8 +142,8 @@ const News = () => {
 
                 {/* Gallery Section */}
                 <SectionHeader
-                    title="Photo Gallery"
-                    subtitle="Glimpses of our community and projects"
+                    title={t.photoGallery}
+                    subtitle={t.gallerySubtitle}
                 />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
